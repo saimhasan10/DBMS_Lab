@@ -1,0 +1,10 @@
+SELECT UPPER(' i am form upper function')
+SELECT LOWER(' I AM  FROM LOWER FUNCTION')
+
+-- EXTRA
+SELECT LENGTH('HELLO MAMUR_BETA')
+SELECT SUBSTRING('HELLO MAMUR_BETA', 6, 5)
+SELECT REVERSE('HELLO MAMUR_BETA')
+
+-- show the teacher names in uppercase
+SELECT UPPER(Name) FROM teacher;
