@@ -1,0 +1,33 @@
+{% extends 'library/base.html' %} {% block content %}
+<h2>{{ view.action_title }}</h2>
+<form method="post" enctype="multipart/form-data" class="form-container">
+  {% csrf_token %}
+
+  <!-- Fields in a single row -->
+  <div class="row">
+    {% for field in form %}
+    <div class="col">{{ field.label_tag }} {{ field }}</div>
+    {% endfor %}
+  </div>
+
+  <!-- Save button in the next row -->
+  <div class="row mt-3">
+    <div class="col text-center">
+      <button type="submit" class="btn btn-success">Save</button>
+    </div>
+  </div>
+</form>
+
+<style>
+  /* Styling for fields in a single row */
+  .form-container .row {
+    display: flex;
+    gap: 15px; /* Space between fields */
+    flex-wrap: nowrap; /* Prevent fields from wrapping */
+  }
+  .form-container .row .col {
+    flex: 1; /* Makes each field take equal space */
+    min-width: 150px; /* Minimum width for each field */
+  }
+</style>
+{% endblock %}

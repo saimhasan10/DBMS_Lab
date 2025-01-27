@@ -1,0 +1,29 @@
+{% extends 'library/base.html' %} {% block content %}
+<a href="{% url 'book_add' %}" class="btn btn-secondary mb-3">Add New Book</a>
+<div class="row">
+  {% for book in books %}
+  <div class="col-md-4 mb-3">
+    <div class="card">
+      <img
+        src="{{ book.image.url }}"
+        class="card-img-top"
+        alt="Book Image"
+        style="height: 200px; object-fit: cover"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ book.title }}</h5>
+        <p class="card-text">Author: {{ book.author }}</p>
+        <p class="card-text">Genre: {{ book.genre }}</p>
+        <p class="card-text">Available: {{ book.availability_status }}</p>
+        <a href="{% url 'book_update' book.pk %}" class="btn btn-warning"
+          >Edit</a
+        >
+        <a href="{% url 'book_delete' book.pk %}" class="btn btn-danger"
+          >Delete</a
+        >
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
