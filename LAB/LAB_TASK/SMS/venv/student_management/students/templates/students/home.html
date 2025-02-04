@@ -1,0 +1,43 @@
+{% extends 'students/base.html' %} {% block title %}Home{% endblock %}
+<!--  -->
+{% block content %}
+<h1 class="text-2xl font-bold mb-6">Student List</h1>
+<a
+  href="{% url 'student_add' %}"
+  class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-6 inline-block"
+  >Add Student</a
+>
+<div class="bg-white shadow rounded-lg">
+  <table class="min-w-full bg-white">
+    <thead class="bg-gray-800 text-white text-left">
+      <tr>
+        <th class="w-1/4 px-4 py-2">Name</th>
+        <th class="w-1/4 px-4 py-2">Roll</th>
+        <th class="w-1/4 px-4 py-2">Email</th>
+        <th class="w-1/4 px-4 py-2">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="text-gray-700">
+      {% for student in students %}
+      <tr class="border-b">
+        <td class="px-4 py-2">{{ student.name }}</td>
+        <td class="px-4 py-2">{{ student.roll }}</td>
+        <td class="px-4 py-2">{{ student.email }}</td>
+        <td class="px-4 py-2">
+          <a
+            href="{% url 'student_edit' student.pk %}"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >Edit</a
+          >
+          <a
+            href="{% url 'student_delete' student.pk %}"
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

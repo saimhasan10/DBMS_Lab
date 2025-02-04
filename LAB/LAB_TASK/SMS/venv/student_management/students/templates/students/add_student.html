@@ -1,0 +1,77 @@
+{% extends 'students/base.html' %} {% block title %}Add Student{% endblock %}
+<!--  -->
+{% block content %}
+<h1 class="text-2xl font-bold mb-6">Add New Student</h1>
+<form method="post" class="bg-white p-6 rounded shadow">
+  {% csrf_token %}
+  <div class="flex flex-wrap gap-4">
+    <!-- Name Field -->
+    <div class="flex-1">
+      <label for="id_name" class="block text-gray-700 font-medium mb-2"
+        >Name</label
+      >
+      <input
+        type="text"
+        name="name"
+        id="id_name"
+        class="w-full border-2 border-blue-500 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        placeholder="Enter student's name"
+      />
+    </div>
+
+    <!-- Roll Field -->
+    <div class="flex-1">
+      <label for="id_roll" class="block text-gray-700 font-medium mb-2"
+        >Roll</label
+      >
+      <input
+        type="text"
+        name="roll"
+        id="id_roll"
+        class="w-full border-2 border-blue-500 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        placeholder="Enter roll number"
+      />
+    </div>
+  </div>
+
+  <div class="flex flex-wrap gap-4 mt-4">
+    <!-- Email Field -->
+    <div class="flex-1">
+      <label for="id_email" class="block text-gray-700 font-medium mb-2"
+        >Email</label
+      >
+      <input
+        type="email"
+        name="email"
+        id="id_email"
+        class="w-full border-2 border-blue-500 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        placeholder="Enter email"
+      />
+    </div>
+
+    <!-- Contact Number Field -->
+    <div class="flex-1">
+      <label for="id_contact" class="block text-gray-700 font-medium mb-2"
+        >Contact Number</label
+      >
+      <input
+        type="text"
+        name="contact_number"
+        id="id_contact"
+        class="w-full border-2 border-blue-500 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        placeholder="Enter contact number"
+      />
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="mt-6">
+    <button
+      type="submit"
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Save
+    </button>
+  </div>
+</form>
+{% endblock %}
