@@ -2,8 +2,7 @@
 
 ## simple projects
 
-- **Library Management System**: [Click_Here](https://github.com/saimhasan10/DBMS_Lab/tree/main/
-  LAB/LAB_TASK/LMS)
+- **Library Management System**: [Click_Here](https://github.com/saimhasan10/DBMS_Lab/tree/main/LAB/LAB_TASK/LMS/library_management)
 
 - **Student Management System**: [Click_Here](https://github.com/saimhasan10/DBMS_Lab/tree/main/LAB/LAB_TASK/SMS/venv)
 
